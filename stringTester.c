@@ -18,6 +18,8 @@ int main(int argc, char **argv) {
   int numCases = 0;
   int casePassed = 0;
   char sampString[] = "Hello my dudes!";
+  char exampleString[] = "My name is Victor!";
+  char exString[] = "Bonjour! J'mappelle Victor!";
   printf("Your sample string is:\n");
   printf("%s\n", sampString);
   //Test for correct usage
@@ -32,90 +34,121 @@ int main(int argc, char **argv) {
 	printf("Case %d failed! Expected following string:\n", numCases);
 	printf("Hello my fufes!\n");
   }
-  //Test for NULL error
+
+  printf("Your sample string is:\n");
+  printf("%s\n", exampleString);
   numCases++;
-  char *nullString = NULL;
-  replaceChar(nullString, 'd', 'f');
-  if(nullString == NULL) {
-	printf("Case %d passed!\n", numCases);
-	casePassed++;
-  } else {
-	printf("Case %d failed! Expected to return as NULL.\n", numCases);
-  }
-  //Test for no change
-  numCases++;
-  printf("Your current string is:\n");
-  printf("%s\n", sampString);
-  replaceChar(sampString, 'q', 'g');
+  replaceChar(exampleString, 'e', 'a');
   printf("Your string is now:\n");
-  printf("%s\n", sampString);
-  if(strcmp(sampString, "Hello my fufes!") == 0) {
-	printf("Case %d passed!\n", numCases);
-	casePassed++;
-  } else {
-	printf("Case %d failed! Expected no change!\n", numCases);
-  }
-
-  //Test for function replaceCharCopy()
-  //Test for correct usage
-  numCases++;
-  char *newString = replaceCharCopy(sampString, 'H', 'B');
-  printf("Your new string reads:\n");
-  printf("%s\n", newString);
-  if(strcmp(newString, "Bello my fufes!") == 0) {
-	printf("Case %d passed!\n", numCases);
-	casePassed++;
-  } else {
-	printf("Case %d failed! Expected following string!\n", numCases);
-	printf("%s\n", newString);
-  }
-
-  //Test for function removeChar()
-  //Test for correct usage
-  numCases++;
-  printf("Your string reads:\n");
-  printf("%s\n", sampString);
-  removeChar(sampString, 'e');
-  if(strcmp(sampString, "Hllo my fufs!") == 0) {
-	printf("Case %d passed!\n", numCases);
-  casePassed++;}
-  else {
- printf("Case %d failed! Expected following string!\n", numCases);
- printf("%s\n", sampString);
- }
-
-  numCases++;
-  printf("Your string reads:\n");
-  printf("%s\n", sampString);
-  char *sampstring2 = (removeCharCopy(sampString, 'l'));
-  if(strcmp(sampstring2, "Ho my fufs!") == 0) {
-	printf("Case %d passed!\n", numCases);
-  casePassed++;}
-  else {
- printf("Case %d failed! Expected following string!\n", numCases);
- printf("%s\n", sampstring2);
- }
-  printf("Your string now reads:\n");
-  printf("%s\n", sampstring2);
+  printf("%s\n", exampleString);
+  if(strcmp(exampleString, "My nama is Victor!") == 0) {
+  printf("Case %d passed!\n", numCases);
   casePassed++;
-
-
-    numCases++;
-    printf("Your string reads:\n");
-    printf("%s\n", sampString);
-    char *sampstring3 = (removeCharCopy(sampString, 'f'));
-    if(strcmp(sampstring3, "Hllo my us!") == 0) {
-  	printf("Case %d passed!\n", numCases);
+  } else {
+  printf("Case %d failed! Expected following string:\n", numCases);
+  printf("My nama is Victor!\n");
   }
-    else {
-   printf("Case %d failed! Expected following string!\n", numCases);
-   printf("%s\n", sampstring3);
-   }
-    printf("Your string now reads:\n");
-    printf("%s\n", sampstring3);
-    casePassed++;
 
-    numCases++;
+  printf("Your sample string is:\n");
+  printf("%s\n", exString);
+  numCases++;
+  replaceChar(exString, 'i', 'e');
+  printf("Your string is now:\n");
+  printf("%s\n", exString);
+  if(strcmp(exString, "Bonjour! J'mappelle Vector!") == 0) {
+  printf("Case %d passed!\n", numCases);
+  casePassed++;
+  } else {
+  printf("Case %d failed! Expected following string:\n", numCases);
+  printf("Bonjour! J'mappelle Vector!\n");
+  }
+//END TEST
+
+
+  //Test for NULL error
+ //  numCases++;
+ //  char *nullString = NULL;
+ //  replaceChar(nullString, 'd', 'f');
+ //  if(nullString == NULL) {
+	// printf("Case %d passed!\n", numCases);
+	// casePassed++;
+ //  } else {
+	// printf("Case %d failed! Expected to return as NULL.\n", numCases);
+ //  }
+ //  //Test for no change
+ //  numCases++;
+ //  printf("Your current string is:\n");
+ //  printf("%s\n", sampString);
+ //  replaceChar(sampString, 'q', 'g');
+ //  printf("Your string is now:\n");
+ //  printf("%s\n", sampString);
+ //  if(strcmp(sampString, "Hello my fufes!") == 0) {
+	// printf("Case %d passed!\n", numCases);
+	// casePassed++;
+ //  } else {
+	// printf("Case %d failed! Expected no change!\n", numCases);
+ //  }
+ //
+ //  //Test for function replaceCharCopy()
+ //  //Test for correct usage
+ //  numCases++;
+ //  char *newString = replaceCharCopy(sampString, 'H', 'B');
+ //  printf("Your new string reads:\n");
+ //  printf("%s\n", newString);
+ //  if(strcmp(newString, "Bello my fufes!") == 0) {
+	// printf("Case %d passed!\n", numCases);
+	// casePassed++;
+ //  } else {
+	// printf("Case %d failed! Expected following string!\n", numCases);
+	// printf("%s\n", newString);
+ //  }
+ //
+ //  //Test for function removeChar()
+ //  //Test for correct usage
+ //  numCases++;
+ //  printf("Your string reads:\n");
+ //  printf("%s\n", sampString);
+ //  removeChar(sampString, 'e');
+ //  if(strcmp(sampString, "Hllo my fufs!") == 0) {
+	// printf("Case %d passed!\n", numCases);
+ //  casePassed++;}
+ //  else {
+ // printf("Case %d failed! Expected following string!\n", numCases);
+ // printf("%s\n", sampString);
+ // }
+ //
+ //  numCases++;
+ //  printf("Your string reads:\n");
+ //  printf("%s\n", sampString);
+ //  char *sampstring2 = (removeCharCopy(sampString, 'l'));
+ //  if(strcmp(sampstring2, "Ho my fufs!") == 0) {
+	// printf("Case %d passed!\n", numCases);
+ //  casePassed++;}
+ //  else {
+ // printf("Case %d failed! Expected following string!\n", numCases);
+ // printf("%s\n", sampstring2);
+ // }
+ //  printf("Your string now reads:\n");
+ //  printf("%s\n", sampstring2);
+ //  casePassed++;
+ //
+ //
+ //    numCases++;
+ //    printf("Your string reads:\n");
+ //    printf("%s\n", sampString);
+ //    char *sampstring3 = (removeCharCopy(sampString, 'f'));
+ //    if(strcmp(sampstring3, "Hllo my us!") == 0) {
+ //  	printf("Case %d passed!\n", numCases);
+ //  }
+ //    else {
+ //   printf("Case %d failed! Expected following string!\n", numCases);
+ //   printf("%s\n", sampstring3);
+ //   }
+ //    printf("Your string now reads:\n");
+ //    printf("%s\n", sampstring3);
+ //    casePassed++;
+ //
+ //    numCases++;
 
   //Test for function removeCharCopy()
   //Test for correct usage

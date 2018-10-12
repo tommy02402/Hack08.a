@@ -80,12 +80,13 @@ char * removeCharCopy(const char *s, char c) {
     if(s == NULL) {
     return NULL;
   }
-char *newCopy = replaceCharCopy(s, '.', '.');
-removeChar(newCopy, c);
-char *FinalCopy = replaceCharCopy(newCopy, '.', '.');
-free(newCopy);
-return FinalCopy;
-}
+  char *NewCopy = (char *) malloc(sizeof(char) * (strlen(s) + 1));
+    strcpy(NewCopy, s);
+
+    removeChar(NewCopy, c);
+
+    return NewCopy;
+  }
 
 char **lengthSplit(const char *s, int n) {
   if(s == NULL) {
@@ -103,6 +104,7 @@ for (int i = 0; i < rows; i++) {
   for (int j = 0; j < n; j++) {
     matrix[i][j] = s[k];
     k++;
+    matrix[i][n] = '\0';
   }
 }
 return matrix;
